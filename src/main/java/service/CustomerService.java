@@ -30,4 +30,9 @@ public class CustomerService implements ICustomerService {
     public void remove(Long id) {
         customerRepository.remove(id);
     }
+
+    @Override
+    public boolean insertWithStoredProcedure(Customer customer) {
+        return customerRepository.insertWithStoredProcedure(customer);
+    }
 }
