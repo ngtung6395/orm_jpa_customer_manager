@@ -7,14 +7,68 @@ import javax.persistence.*;
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
+    private String img;
+    @ManyToOne
+    @JoinColumn(name="province_id")
+    private Province province;
+
+    public Customer(Long id, String firstName, String lastName, Province province) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.province = province;
+    }
+
+    public Customer(Long id, String firstName, String lastName, String img, Province province) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.img = img;
+        this.province = province;
+    }
+
+    public Customer(String firstName, String lastName, String img, Province province) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.img = img;
+        this.province = province;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public Customer(String firstName, String lastName, Province province) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.province = province;
+    }
+
+    public Province getProvince() {
+        return province;
+    }
+
+    public void setProvince(Province province) {
+        this.province = province;
+    }
 
     public Customer() {}
 
     public Customer(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public Customer(Long id, String firstName, String lastName) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
