@@ -42,6 +42,15 @@ public class CustomerController {
         return modelAndView;
     }
 
+//    @PostMapping("/create-customer")
+//    public ModelAndView saveCustomer(@ModelAttribute("customer") Customer customer) {
+//        customerService.save(customer);
+//        ModelAndView modelAndView = new ModelAndView("/customer/create");
+//        modelAndView.addObject("customer", new Customer());
+//        modelAndView.addObject("message", "New customer created successfully");
+//        return modelAndView;
+//    }
+
     @PostMapping("/create-customer")
     public ModelAndView saveCustomer(@ModelAttribute CustomerForm customerForm) {
         MultipartFile multipartFile = customerForm.getImg();

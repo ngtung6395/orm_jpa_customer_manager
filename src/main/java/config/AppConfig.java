@@ -45,7 +45,7 @@ import java.util.Properties;
 @ComponentScan("controller")
 @EnableJpaRepositories("repository")
 @EnableSpringDataWebSupport
-@PropertySource("classpath:upload_file.properties")
+@PropertySource("classpath:file_upload.properties")
 public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
 
     @Value("${file-upload}")
@@ -141,7 +141,7 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
         registry.addFormatter(new ProvinceFormatter(applicationContext.getBean(ProvinceService.class)));
     }
 
-    //Cấu hình upload file
+//    Cấu hình upload file
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/image/**")

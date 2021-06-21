@@ -12,17 +12,17 @@ service/province/ProvinceService.java
  service.province.ProvinceService
 model/CustomerForm.java
  model.CustomerForm
-config/AppInit.java
- config.AppInit
+service/customer/CustomerService.java
+ service.customer.CustomerService
 model/Customer.java
  model.Customer
 service/customer/ICustomerService.java
  service.customer.ICustomerService
 model/Province.java
  model.Province
-service/customer/CustomerService.java
- service.customer.CustomerService
-config/AppConfig.java
- config.AppConfig
 controller/CustomerController.java
  controller.CustomerController
+config/AppConfig.java
+ config.AppConfig
+config/AppInit.java
+ config.AppInit
